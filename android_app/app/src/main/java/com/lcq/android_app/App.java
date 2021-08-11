@@ -8,6 +8,7 @@ import io.flutter.embedding.engine.dart.DartExecutor;
 
 public class App extends Application {
 
+    public static boolean ENABLE_CACHE_ENGINE = true;
     public FlutterEngine flutterEngine;
     public static String ENGINE_ID = "my_engine";
 
@@ -15,7 +16,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-
+        if (ENABLE_CACHE_ENGINE) {
+            startFlutterEngineCache();
+        }
     }
 
     public void startFlutterEngineCache() {
